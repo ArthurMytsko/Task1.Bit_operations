@@ -1,6 +1,6 @@
 /**
- *@file  Main.cpp
- *@brief Implement main function
+ * @file  Main.cpp
+ * @brief Implement main function
  */
 #include <iostream>
 #include <conio.h>
@@ -14,14 +14,38 @@ using namespace std;
    */
 int main(void)
 {
-	unsigned long int x;
-	cout << "x = ";
-	cin  >> x;
+	//unsigned long int ulNumber;
+	//cout << "x = ";
+	//cin  >> ulNumber;
 
-	for(int i = sizeof(x) * 4 - 1; i >= 0; i--)
-		cout << (x >> i & 0x1 );
+	//for(int i = sizeof(ulNumber) * 4 - 1; i >= 0; i--)
+	//	cout << (ulNumber >> i & 0x1 );
+	//cout << '\n';
+	//cout << PowerOfTwo(ulNumber);
+
+	int n;
+	int p;
+	unsigned long ulResult;
+	cout << "n = ";
+	cin >> n;
+	cout << "p = ";
+	cin >> p;
+
+
+	for(int i = sizeof(n) * 4 - 1; i >= 0; i--)
+		cout << (n >> i & 0x1 );
 	cout << '\n';
-	cout << PowerOfTwo(x);
+
+	for(int i = sizeof(p) * 4 - 1; i >= 0; i--)
+		cout << (p >> i & 0x1 );
+	cout << '\n';
+
+	ulResult = SetBits(n, p);
+
+	for(int i = sizeof(ulResult) * 4 - 1; i >= 0; i--)
+		cout << (ulResult >> i & 0x1 );
+	cout << '\n';
+
 
 	_getch();
 	return 0;

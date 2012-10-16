@@ -1,10 +1,12 @@
 /**
- * @file  Main.cpp
- * @brief Implement main function
+ * @file   Main.cpp
+ * @brief  Implement main function
+ * @author Arthur Mytsko
  */
 #include <iostream>
 #include <conio.h>
 #include "Task1.h"
+#include "IOFunctions.h"
 
 using namespace std;
 
@@ -14,18 +16,20 @@ using namespace std;
    */
 int main(void)
 {
-	//unsigned long int ulNumber;
-	//cout << "x = ";
-	//cin  >> ulNumber;
+	
 
-	//for(int i = sizeof(ulNumber) * 4 - 1; i >= 0; i--)
-	//	cout << (ulNumber >> i & 0x1 );
-	//cout << '\n';
-	//cout << PowerOfTwo(ulNumber);
+	UL ulNumber;
+	cout << "x = ";
+	ulNumber = ValidInput();
 
-	//int n;
-	//int p;
-	unsigned long ulResult;
+	PrintBinCode(ulNumber);
+
+	cout << '\n';
+	cout << PowerOfTwo(ulNumber);
+
+	int n;
+	int p;
+	UL ulResult;
 	//cout << "n = ";
 	//cin >> n;
 	//cout << "p = ";
@@ -45,14 +49,14 @@ int main(void)
 	//for(int i = sizeof(ulResult) * 4 - 1; i >= 0; i--)
 	//	cout << (ulResult >> i & 0x1 );
 	//cout << '\n';
-	unsigned long int ulNumber;
+	/*UL ulNumber;
 	cout << "x = ";
 	cin  >> ulNumber;
 
 	for(int i = sizeof(ulNumber) * 4 - 1; i >= 0; i--)
 		cout << (ulNumber >> i & 0x1 );
 	cout << '\n';
-	cout << TwoSetBit(ulNumber);
+	cout << TwoSetBit(ulNumber);*/
 
 	_getch();
 	return 0;

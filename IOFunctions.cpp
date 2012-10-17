@@ -22,29 +22,48 @@ void PrintBinCode(long pNumber)
 }
 
 
-UL ValidInput(bool bSign)
+UL ValidInput()
 {
-	char *buffer = new char[100];
+  	char *cBuffer = new char[100];
 	UL Result;
 
-	gets_s(buffer, 100);
-
-	if((buffer[0] == '-')&&(bSign))
-
-	printf(buffer);
 	while(true)
-		try
-		{
-			Result = atol(buffer);
-			break;
-		}
-		catch(char* str)
-		{
-			printf("Wrong number. Try again..\n");
-		}
+	{
+		gets_s(cBuffer, 100);
+		UCH chBufLen = strlen(cBuffer);
 
-	//if((buffer[0] == '-')&&(chSign))
-	//	ucPos = 1;
-	//else if ((buffer[0])
-	return Result;
-}
+		int i = 0;
+		while( (cBuffer[i] == ' ') && (i <= chBufLen) ) // skip spaces
+			i++;
+		if(i == chBufLen )
+			{
+				printf("Wrong number! Try again..\n");
+				continue;
+			}
+		if(cBuffer[i] == '-')
+			i++; // skip '-'
+		if(i == chBufLen)
+			{
+				printf("Wrong number! Try again..\n");
+				continue;
+			}
+		while((cBuffer[i] >= '0') && (cBuffer[i] <= '9') && i <= chBufLen)
+			i++;
+
+		bool bBreakOutCicle = false;
+		while(i < strlen(cBuffer) && i <= chBufLen)
+		{
+			if(cBuffer[i] != ' ')
+			{
+				printf("Wrong number! Try again..\n");
+				bBreakOutCicle = true;
+				break;
+			}
+			i++;
+		}
+		if(bBreakOutCicle)
+			continue;
+		break;
+	}
+	return atol(cBuffer);
+};

@@ -10,9 +10,17 @@ typedef unsigned long UL;
 typedef unsigned char UCH;
 
 
+ /**
+   * @brief      This function print number in binary code
+   * @param	[in] lNumber number to print
+   * @return	 void
+   */
+void PrintBinCode(long lNumber);
 
-void PrintBinCode(long pNumber);
-
+ /**
+   * @brief      This function implement valid inputing a long number
+   * @return	 unginged long number wich was inputed
+   */
 UL ValidInput(void);
 
 

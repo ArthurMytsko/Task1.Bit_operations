@@ -5,9 +5,11 @@
  */
 
 #include "IOFunctions.h"
-#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <conio.h>
 
-using namespace std;
 
 void PrintBinCode(long pNumber)
 {
@@ -19,13 +21,17 @@ void PrintBinCode(long pNumber)
 		printf("%d", (pNumber & ulMask) != 0);
 		ulMask >>= 1;
 	}
+	printf("\n");
 }
 
 
-UL ValidInput()
+UL ValidInput(char cSymbol)
 {
   	char *cBuffer = new char[100];
-	UL Result;
+	UL ulTemp = -1;
+	ulTemp >>= 1;
+	
+	printf("%c = ", cSymbol);
 
 	while(true)
 	{
@@ -47,6 +53,7 @@ UL ValidInput()
 				printf("Wrong number! Try again..\n");
 				continue;
 			}
+		//skip digits
 		while((cBuffer[i] >= '0') && (cBuffer[i] <= '9') && i <= chBufLen)
 			i++;
 
@@ -63,7 +70,30 @@ UL ValidInput()
 		}
 		if(bBreakOutCicle)
 			continue;
+		if( (atol(cBuffer) == ulTemp) || atol(cBuffer) ==  ~ulTemp)
+		{
+			printf("Wrong number! Try again..\n");
+			continue;
+		}
 		break;
 	}
 	return atol(cBuffer);
 };
+
+void PrintInfo(void)
+{
+	_getch();
+	system("cls");
+	printf("Choose task:\n");
+	printf("'a' : task 1\n");
+	printf("'b' : task 2\n");
+	printf("'c' : task 3\n");
+	printf("'o' : task 15\n");
+	printf("'p' : task 16\n");
+	printf("'q' : task 17\n");
+	printf("'r' : task 18\n");
+	printf("'s' : task 19\n");
+	printf("'t' : task 20\n");
+	printf("'y' : task 25\n");
+	printf("\n 0 - exit\n");
+}

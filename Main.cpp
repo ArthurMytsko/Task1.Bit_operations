@@ -3,61 +3,60 @@
  * @brief  Implement main function
  * @author Arthur Mytsko
  */
-#include <iostream>
 #include <conio.h>
-#include "Task1.h"
 #include "IOFunctions.h"
-
-using namespace std;
+#include "CallFunctions.h"
 
  /**
-   * @brief      Main function, implement input and output data and calling functions of Tak1
-   * @return	 1 - number is power of two, 0 - no
+   * @brief      Main function, implement runing all finished tasks
+   * @return	 0
    */
 int main(void)
 {
-	
+	bool bFlagContinue  = true;
 
-	UL ulNumber;
-	cout << "x = ";
-	ulNumber = ValidInput();
+	PrintInfo();
+	while(bFlagContinue)
+	{
+		switch(_getch() )
+		{
+		case 'a': // task 1
+			RunTask1();
+			break;
+		case 'b': // task 2
+			RunTask2();
+			break;
+		case 'c': // task 3
+			RunTask3();
+			break;
+		case 'o': // task 15
+			RunTask15();
+			break;
+		case 'p': // task 16
+			RunTask16();
+			break;
+		case 'q': // task 17
+			RunTask17();
+			break;
+		case 'r': // task 18
+			RunTask18();
+			break;
+		case 's': // task19
+			RunTask19();
+			break;
+		case 't': // task20
+			RunTask20();
+			break;
+		case 'y': // task 25
+			RunTask25();
+			break;
+		case '0': // EXIT
+			bFlagContinue = false;
+			break;
+		default:
 
-	PrintBinCode(ulNumber);
-
-	cout << '\n';
-	cout << PowerOfTwo(ulNumber);
-
-	int n;
-	int p;
-	UL ulResult;
-	//cout << "n = ";
-	//cin >> n;
-	//cout << "p = ";
-	//cin >> p;
-
-
-	//for(int i = sizeof(n) * 4 - 1; i >= 0; i--)
-	//	cout << (n >> i & 0x1 );
-	//cout << '\n';
-
-	//for(int i = sizeof(p) * 4 - 1; i >= 0; i--)
-	//	cout << (p >> i & 0x1 );
-	//cout << '\n';
-
-	//ulResult = SetBits(n, p);
-
-	//for(int i = sizeof(ulResult) * 4 - 1; i >= 0; i--)
-	//	cout << (ulResult >> i & 0x1 );
-	//cout << '\n';
-	/*UL ulNumber;
-	cout << "x = ";
-	cin  >> ulNumber;
-
-	for(int i = sizeof(ulNumber) * 4 - 1; i >= 0; i--)
-		cout << (ulNumber >> i & 0x1 );
-	cout << '\n';
-	cout << TwoSetBit(ulNumber);*/
-
-	_getch();
+			break;
+		}
+	}
 	return 0;
 }

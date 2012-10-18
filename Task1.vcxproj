@@ -74,13 +74,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CallFunctions.cpp" />
     <ClCompile Include="IOFunctions.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Task1.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CallFunctions.h" />
     <ClInclude Include="IOFunctions.h" />
     <ClInclude Include="Task1.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Task Description.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

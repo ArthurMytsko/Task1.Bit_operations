@@ -21,7 +21,12 @@ void PrintBinCode(long lNumber);
    * @brief      This function implement valid inputing a long number
    * @return	 unginged long number wich was inputed
    */
-UL ValidInput(void);
+UL ValidInput(char cSymbol);
 
+ /**
+   * @brief      This function print information to choose task
+   * @return	 void
+   */
+void PrintInfo(void);
 
 #endif  /* _IOFUNCTIONS_H_ */

@@ -1,6 +1,6 @@
 /**
  * @file   CallFunctions.h
- * @brief  Contains declaration of runing task functions 
+ * @brief  Contains declaration of I/O functions 
  * @author Arthur Mytsko
  */
 #ifndef _CALLFUNCTIONS_H_
